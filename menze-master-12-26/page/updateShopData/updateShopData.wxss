@@ -1,0 +1,88 @@
+/* page/updateShop/updateShop.wxss */
+page {
+  background-color: #F8F8F8;
+}
+.title{
+     font-family: "Microsoft YaHei UI";
+     margin-left: 5px;
+     padding: 5px;
+     margin-top:8px;
+     color: #4D4D4D;
+     font-weight: bold;
+}
+.input {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: white;
+}
+.switch{
+     font-family: "Microsoft YaHei UI";
+     display: flex;
+     justify-content: space-between;
+     margin-left: 10px;
+     margin-right: 10px;
+     color: #4D4D4D;
+     font-weight: bold;
+}
+.switchText{
+    margin-top: 20px;
+}
+.switchButton{
+    margin-top: 15px;
+}
+.line{
+    height: 0;
+    margin-top: 10px;
+    background-color: white; 
+}
+.selectType{
+  flex-direction:row;
+  display: flex;
+  margin-top: 15px;
+  margin-left: 10px;
+}
+.nav_left{
+  display: inline-block;
+  flex: 1;
+  /*height: 100%;*/
+  background: #f5f5f5;
+  text-align: center;
+}
+.nav_right{  
+  height: auto;
+  flex: 3;
+  padding: 10px;
+  background: #fff;
+  box-sizing: border-box;
+}
+.nav_left .nav_left_items{
+  font-family: "Microsoft YaHei UI";
+  height: 35px;
+  line-height: 40px;
+  padding: 6px 0;
+  border-bottom: 1px solid #dedede;
+  font-size: 30rpx;
+}
+.nav_left .nav_left_items.active{
+  background: #27a59c;
+  color: white;
+}
+
+.nav_right .nav_right_items{
+  border-radius: 5rpx;
+  float: left;
+  width: 40%;
+  height: auto;
+  text-align: center;
+  color: gray;
+  font-size: 30rpx;
+  padding: 10px;
+}
+.nav_right .nav_right_items.active{
+   background: #ed8713;
+   color: white;
+}
+.ok{
+ margin-top:10px; 
+ padding: 10px;
+}

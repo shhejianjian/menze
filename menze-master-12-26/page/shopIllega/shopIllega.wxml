@@ -1,0 +1,53 @@
+<view class="section section_gap">
+    <view class="section__title">选择违规类型(至少选一项)</view>
+    <checkbox-group class="group" bindchange="checkboxChange">
+        <view class="label-1" wx:for="{{checkboxItems}}">
+            <label>
+                <checkbox hidden value="{{item.name}}" checked="{{item.checked}}"></checkbox>
+                <view class="label-1__icon">
+                    <icon type="success" class="label-1__icon-checked" style="opacity:{{item.checked ? 1: 0}}"></icon>
+                </view>
+                <text class="label-1__text">{{item.value}}</text>
+            </label>
+        </view>
+    </checkbox-group>
+</view>
+
+<view class="section">
+    <view class="section__title">选择违规时间</view>
+    <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+        <view class="picker">
+            当前选择: {{date}}
+        </view>
+    </picker>
+</view>
+
+<view class="input">
+    <textarea bindblur="bindInput" auto-height placeholder="请输入情况说明"/>
+</view>
+
+<view class="images-wrapper">
+    <text class="section__title">选择图片</text>
+    <view class="images-list">
+        <block wx:for="{{imageList}}" wx:for-item="image">
+            <image src="{{image}}" class="images-image" data-src="{{image}}" bindtap="previewImage"></image>
+        </block>
+        <view class="images-image image-plus" bindtap="chooseImage">
+            <view class="image-plus-horizontal"></view>
+            <view class="image-plus-vertical"></view>
+        </view>
+    </view>
+</view>
+
+<view class="button-wrapper">
+    <button type="primary" plain="unplain"
+            bindtap="commit"> 提交
+    </button>
+</view>
+
+<view class="bgView" hidden="{{gifHidden}}">
+
+</view>
+<view class="loadingGIFView" hidden="{{gifHidden}}">
+    <image class="loadingImage" src="../../image/loading.gif"></image>
+</view>

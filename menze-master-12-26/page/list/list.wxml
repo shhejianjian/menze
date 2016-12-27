@@ -1,0 +1,19 @@
+<view  class="shop-list">
+    <block wx:for="{{shopList}}" wx:for-item="shop" wx:key="index">
+        <view class="shop-item" bindtap="navigateToDetail" data-index="{{index}}">
+            <image class="shop-image" src="{{shop.PhotoUrl}}"></image>
+            <view class="shop-description">
+                <view class="shop-name">{{shop.CompanyName}}</view>
+                <view>
+                    <text class="shop-type"> {{shop.OperatType }}</text>
+                </view>
+                <view class="shop-address">{{shop.RoadAddress}}</view>
+            </view>
+        </view>
+        <view class="line"></view>
+    </block>
+</view>
+
+<view class="noDetailView" hidden="{{hidden}}">
+    <text>暂无门责单位数据</text>
+</view>

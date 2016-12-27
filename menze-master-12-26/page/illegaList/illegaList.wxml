@@ -1,0 +1,22 @@
+<view  class="illega-list">
+    <block wx:for="{{illegaList}}" wx:for-item="illega" wx:key="index">
+        <view class="illega-item" bindtap="navigateToDetail" data-index="{{index}}">
+            <image class="illega-image" src="https://changning.menze.net.cn/{{illega.PhotoUrl}}&height=200&width=200" data-imageurl="https://changning.menze.net.cn/{{illega.PhotoUrl}}&width={{screenwidth}}&height={{screenheight}}" bindtap="previewImage"></image>
+            
+            <view class="illega-description">
+                <view class="illega-name">第{{illega.Step}}次登记</view>
+                <view>
+                    <view class="illega-type">{{illega.OffendTypeValue }}</view>
+                </view>
+                <view class="illega-address">登记时间:{{recordTime}}</view>
+                <view class="illega-address">登记人:{{illega.RecordOperater}}</view>
+                <view class="illega-address">情况说明:{{illega.StepAgree}}</view>
+            </view>
+        </view>
+        <view class="line"></view>
+    </block>
+</view>
+
+<view class="noDetailView" hidden="{{hidden}}">
+    <text>暂无违规记录</text>
+</view>

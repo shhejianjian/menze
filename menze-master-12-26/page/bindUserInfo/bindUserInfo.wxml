@@ -1,0 +1,20 @@
+<!--page/login/login.wxml-->
+<view class="container">
+  <view  bindtap="bindViewTap" class="userinfo">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  </view>
+</view>
+<view class="input">
+  <view class="title">
+    <text class="userText">用户名:</text>
+    <input  placeholder="请输用户名" bindinput="inputUserName"/>
+  </view>
+  <view class="title" >
+    <text class="userText" > 密　码:</text>
+    <input password="true" placeholder="请输密码" bindinput="inputPassward"/>
+  </view>
+</view>
+<view class="binding">
+  <button type="primary" plain="true" bindtap="binding">绑定</button>
+</view>

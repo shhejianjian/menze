@@ -1,0 +1,67 @@
+/**index.wxss**/
+page {
+  background-color: #F8F8F8;
+}
+
+.picker{
+  padding: 26rpx;
+  background-color: white;
+  height: 100rpx;
+  color: gray;
+}
+.pickerForIllega{
+  padding: 26rpx;
+  background-color: white;
+  height: 40rpx;
+  color: gray;
+}
+.section__title {
+  padding: 20rpx;
+  margin-top: 10rpx;
+  color: #4D4D4D;
+  font-weight: bold;
+}
+.section-input-number {
+  margin-top: 10px;
+  padding: 20rpx;
+  background-color: white;
+}
+.button-wrapper {
+  padding: 30rpx;
+  margin-top: 10rpx;
+}
+
+.nav_right{
+  display: inline-block;
+  margin-top: -60rpx;
+  right: 0;
+  padding: 10rpx;
+  background: #F8F8F8;
+  box-sizing: border-box;
+  
+}
+.nav_right .nav_right_items{
+  float: left;
+  width: auto;
+  margin: 15rpx 0 0 15rpx;
+  text-align: center;
+  color: grey;
+  padding: 20rpx;
+  height: auto;
+  background-color: clear;
+  border: 1rpx solid lightseagreen;
+  border-radius: 10rpx;
+}
+.nav_right .nav_right_items.active{
+   background: #ed8713;
+   color: white;
+   border: 1rpx solid #ed8713;
+}
+
+.road-title {
+  /*float: left;*/
+  margin-top: 20rpx;
+  padding: 20rpx;
+  color: #4D4D4D;
+  font-weight: bold;
+}

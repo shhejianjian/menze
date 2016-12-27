@@ -1,0 +1,133 @@
+/**index.wxss**/
+page {
+  background-color: #F8F8F8;
+}
+
+.picker{
+  padding: 26rpx;
+  background-color: white;
+  height: 100rpx;
+  color: gray;
+}
+.section__title {
+  padding: 20rpx;
+  margin-top: 10rpx;
+  color: #4D4D4D;
+  font-weight: bold;
+}
+.section-input-number {
+  margin-top: 10px;
+  padding: 20rpx;
+  background-color: white;
+}
+.button-wrapper {
+  padding: 30rpx;
+  margin-top: 10rpx;
+}
+
+.nav_right-road{
+  display: inline-block;
+  margin-top: -60rpx;
+  right: 0;
+  padding: 10rpx;
+  background: #F8F8F8;
+  box-sizing: border-box;
+  
+}
+.nav_right-road .nav_right_items-road{
+  float: left;
+  width: auto;
+  margin: 15rpx 0 0 15rpx;
+  text-align: center;
+  color: grey;
+  padding: 20rpx;
+  height: auto;
+  background-color: clear;
+  border: 1rpx solid lightseagreen;
+  border-radius: 10rpx;
+}
+.nav_right-road .nav_right_items-road.active{
+   background: #ed8713;
+   color: white;
+   border: 1rpx solid #ed8713;
+}
+
+.road-title {
+  /*float: left;*/
+  margin-top: 20rpx;
+  padding: 20rpx;
+  color: #4D4D4D;
+  font-weight: bold;
+}
+
+.switch{
+     font-family: "Microsoft YaHei UI";
+     display: flex;
+     justify-content: space-between;
+     margin-left: 10px;
+     margin-right: 10px;
+     color: #4D4D4D;
+     font-weight: bold;
+}
+.switchText{
+    margin-top: 20px;
+}
+.switchButton{
+    margin-top: 15px;
+}
+
+.title{
+     font-family: "Microsoft YaHei UI";
+     margin-left: 5px;
+     padding: 5px;
+     margin-top:8px;
+     color: #4D4D4D;
+     font-weight: bold;
+}
+.selectType{
+  flex-direction:row;
+  display: flex;
+  margin-top: 15px;
+  margin-left: 10px;
+}
+.nav_left{
+  display: inline-block;
+  flex: 1;
+  /*height: 100%;*/
+  background: #f5f5f5;
+  text-align: center;
+}
+.nav_right{  
+  height: auto;
+  flex: 3;
+  padding: 10px;
+  background: #fff;
+  box-sizing: border-box;
+}
+.nav_left .nav_left_items{
+  font-family: "Microsoft YaHei UI";
+  height: 35px;
+  line-height: 40px;
+  padding: 6px 0;
+  border-bottom: 1px solid #dedede;
+  font-size: 30rpx;
+}
+.nav_left .nav_left_items.active{
+  background: #27a59c;
+  color: white;
+}
+
+.nav_right .nav_right_items{
+  border-radius: 5rpx;
+  float: left;
+  width: 40%;
+  height: auto;
+  text-align: center;
+  color: gray;
+  font-size: 30rpx;
+  padding: 10px;
+}
+.nav_right .nav_right_items.active{
+   background: #ed8713;
+   color: white;
+}

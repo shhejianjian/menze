@@ -1,0 +1,63 @@
+<view class="page__bd">
+
+        
+
+    <view class="section">
+        <view class="section-input-number">
+            <input bindchange="companyNameChange" placeholder="请输入商户名称"/>
+        </view>
+
+        <view class="switch">
+        <text class="switchText">生活垃圾上门收集</text>
+        <switch class="switchButton" color="#27a59c" checked="{{isChooseSwitch}}" bindchange="switch1Change"/>
+        </view>
+
+        <view class="section__title">请选择街道</view>
+        <picker bindchange="onAreaChange" range="{{areaNameList}}">
+            <view class="picker">
+                当前选择：{{currentArea.AreaName}}
+            </view>
+        </picker>
+    </view>
+</view>
+
+<view class="nav_right-road">
+    <block wx:for="{{currentArea.RoadList}}">
+        <view data-index="{{index}}" bindtap="onRoadChange" class="nav_right_items-road {{selectRoad == item.ID ? 'active' : ''}}" data-id="{{item.ID}}" >{{item.RoadName}}
+        </view>
+    </block>
+
+</view>
+
+<view class="road-title">请输入门牌号</view>
+<view class="section-input-number">
+    <input bindchange="onDoorNumChange" value="{{doorNum}}"placeholder="请输入门牌号"/>
+</view>
+
+
+
+
+<view class="title">
+    <text >请选择经营业态：{{leftItemName}}-{{rightItemName}}</text>
+</view>
+<view class="selectType">
+   <view class="nav_left">
+        <block wx:for="{{nav_left_items}}">
+            <view class="nav_left_items {{curNav == item.id ? 'active' : ''}}" bindtap="switchRightTab" data-name="{{item.name}}" data-index="{{index}}" data-id="{{item.id}}">{{item.name}}</view>
+        </block>
+  </view>
+   <view class="nav_right">
+      <block wx:for="{{nav_left_items[curIndex].rightItem}}" >
+        <!--<view class="nav_right_items">-->
+        <view class="nav_right_items {{select == item.id ? 'active' : ''}}" bindtap="selectItem" data-name="{{item.cdValue}}" data-id="{{item.id}}">
+             <text class="text">{{item.cdValue}}</text>
+        </view>
+      </block>
+  </view>
+</view>
+
+
+<view class="button-wrapper">
+    <button type="primary" plain="true " bindtap="search"> 查询
+    </button>
+</view>

@@ -1,0 +1,41 @@
+<view class="page__bd">
+    <view class="section">
+        <view class="section-input-number">
+            <input bindchange="companyNameChange" placeholder="请输入商户名称"/>
+        </view>
+        <view class="section__title">请选择违规次数</view>
+        <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+            <view class="pickerForIllega">
+            当前选择：{{array[index]}}次违规记录
+            </view>
+        </picker>
+
+        
+        <view class="section__title">请选择街道{{testText}}</view>
+        <picker bindchange="onAreaChange" range="{{areaNameList}}">
+            <view class="picker">
+                当前选择：{{currentArea.AreaName}}
+            </view>
+        </picker>
+    </view>
+</view>
+
+<view class="nav_right">
+    <block wx:for="{{currentArea.RoadList}}">
+        <view data-index="{{index}}" bindtap="onRoadChange" class="nav_right_items {{select == item.ID ? 'active' : ''}}" data-id="{{item.ID}}" >{{item.RoadName}}
+        </view>
+    </block>
+
+</view>
+
+<view class="section__title">请输入门牌号</view>
+<view class="section-input-number">
+    <input bindchange="onDoorNumChange" value="{{doorNum}}"placeholder="请输入门牌号"/>
+</view>
+
+
+
+<view class="button-wrapper">
+    <button type="primary" plain="true " bindtap="search"> 查询
+    </button>
+</view>

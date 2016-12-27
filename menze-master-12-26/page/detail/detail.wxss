@@ -1,0 +1,199 @@
+.container {
+    display: flex;
+    flex-flow: column nowrap;
+    background: #eee;
+}
+.shop-image-bg-view {
+    width: 750rpx;
+    height: 562rpx;
+}
+.shop-image {
+    width: 750rpx;
+    height: 562rpx;
+    position: absolute;
+}
+.shop-bg{
+    width: 750rpx;
+    height: 562rpx;
+    position: relative;
+    
+}
+
+/* shop name bar */
+.shop-name-bar {
+    margin-top: -10rpx;
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 40rpx;
+    background: white;
+}
+
+.shop-name {
+    font-family: "Microsoft YaHei UI";
+    font-size: 38rpx;
+    font-weight: bold;
+}
+.reloadImage {
+    background-color: deepskyblue;
+    border-radius: 40rpx;
+    position: absolute;
+    top: 522rpx;
+    left: 650rpx;
+    height: 80rpx;
+    width: 80rpx;
+}
+.shop-status-bar {
+    display: flex;
+    flex-flow: row nowrap;
+    margin-top: 12rpx;
+}
+
+.shop-evaluate-start {
+    padding: 6rpx 0rpx 6rpx 12rpx;
+    font-family: "Microsoft YaHei UI";
+    font-size: 28rpx;
+    color: orange;
+}
+
+.shop-evaluate-end {
+    padding: 6rpx 12rpx 6rpx 12rpx;
+    font-family: "Microsoft YaHei UI";
+    font-size: 28rpx;
+    color: gray;
+}
+
+.shop-type {
+    padding: 6rpx 12rpx 6rpx 12rpx;
+    background: coral;
+    border-radius: 5rpx;
+    color:  white;
+    font-family: "Microsoft YaHei UI";
+    font-size: 28rpx;
+    font-weight:bold;
+    margin-left: 10rpx;
+}
+
+.operation-bar {
+    display: flex;
+    flex-flow: row nowrap;
+    margin-top: 1rpx;
+    background: white;
+    height: 80rpx;
+    padding-top: 20rpx;
+    padding-bottom: 20rpx;
+}
+
+.line {
+    background: #eee;
+    height: 100%;
+    width: 1rpx;
+}
+
+.operation-item {
+    display: flex;
+    flex-flow: row nowrap;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+.operation-item-image{
+    height: 40rpx;
+    width: 40rpx;
+}
+
+.operation-item-text{
+    font-family: "Microsoft YaHei UI";
+    font-size: 32rpx;
+    margin-left: 8rpx;
+}
+
+.violation-bar {
+    display: flex;
+    flex-flow: row nowrap;
+    margin-top: 1rpx;
+    background: white;
+    height: 120rpx;
+    align-items: center;
+}
+
+.violation-evaluate {
+    padding: 6rpx 12rpx 6rpx 12rpx;
+    background: coral;
+    border-radius: 5rpx;
+    color:  white;
+    font-family: "Microsoft YaHei UI";
+    font-size: 32rpx;
+    font-weight:bold;
+    margin-left: 16rpx;
+}
+
+.violation-text {
+    
+    font-family: "Microsoft YaHei UI";
+    font-size: 32rpx;
+    margin-left: 16rpx;
+    flex-grow: 1;
+}
+.violation-icon {
+    margin-right: 15rpx;
+    width:50rpx;
+    height: 50rpx;
+}
+.violation-record {
+    font-family: "Microsoft YaHei UI";
+    font-size: 32rpx;
+    margin-right: 16rpx;
+    color:#8a8a8a;
+}
+
+.address-bar {
+    display: flex;
+    flex-flow: row nowrap;
+    margin-top: 1rpx;
+    background: white;
+    height: 100rpx;
+    align-items: center;
+}
+
+.address-image {
+    width: 40rpx;
+    height: 40rpx;
+    margin-left: 20rpx;
+}
+
+.address-text{
+    font-family: "Microsoft YaHei UI";
+    font-size: 28rpx;
+    margin-left: 20rpx;
+}
+.telephone-text{
+    font-family: "Microsoft YaHei UI";
+    font-size: 28rpx;
+    margin-left: 20rpx;
+}
+.shop-address-text {
+    font-family: "Microsoft YaHei UI";
+    font-size: 28rpx;
+    margin-left: 20rpx;
+    color: dodgerblue;
+}
+
+.loadingGIFView {
+    position: absolute;
+    top: 40%;
+    left: 23.35%;
+}
+.loadingImage {
+    width: 200px;
+    height: 150px;
+}
+.bgView {
+    position: absolute;
+    top: 0rpx;
+    width: 100%;
+    height: 100%;
+    background-color: lightgrey;
+    opacity: 0.5;
+}
+

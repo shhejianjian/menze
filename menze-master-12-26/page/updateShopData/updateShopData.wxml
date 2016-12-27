@@ -1,0 +1,48 @@
+<!--page/updateShop/updateShop.wxml-->
+<view class="title">
+    <text >经营商户名称：</text>
+</view>
+<view class="input">
+    <input bindchange="bindInputCompanyName" value="{{companyName}}" placeholder="请填写经营商户名称"/>
+</view>
+
+<view class="title">
+    <text >承租方联系人：</text>
+</view>
+<view class="input">
+    <input bindchange="bindInputPersonName" value="{{personName}}" placeholder="请填写承租方联系人"/>
+</view>
+<view class="title">
+    <text >承租方联系电话：</text>
+</view>
+<view class="input">
+    <input bindchange="bindInputNumber" value="{{telephoneNum}}" placeholder="请填写承租方联系电话"/>
+</view>
+<view class="switch">
+    <text class="switchText">生活垃圾上门收集</text>
+    <switch class="switchButton" color="#27a59c" checked="{{isChooseSwitch}}" bindchange="switch1Change"/>
+</view>
+<view class="line"></view>
+<view class="title">
+    <text >请选择经营业态：{{leftItemName}}-{{rightItemName}}</text>
+</view>
+<view class="selectType">
+   <view class="nav_left">
+        <block wx:for="{{nav_left_items}}">
+            <view class="nav_left_items {{curNav == item.id ? 'active' : ''}}" bindtap="switchRightTab" data-name="{{item.name}}" data-index="{{index}}" data-id="{{item.id}}">{{item.name}}</view>
+        </block>
+  </view>
+   <view class="nav_right">
+      <block wx:for="{{nav_left_items[curIndex].rightItem}}" >
+        <!--<view class="nav_right_items">-->
+        <view class="nav_right_items {{select == item.id ? 'active' : ''}}" bindtap="selectItem" data-name="{{item.cdValue}}" data-id="{{item.id}}">
+             <text class="text">{{item.cdValue}}</text>
+        </view>
+      </block>
+  </view>
+
+</view>
+
+  <view class="ok">
+    <button type="primary" plain="true" bindtap="commit">提交</button>
+  </view>

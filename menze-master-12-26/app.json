@@ -1,0 +1,24 @@
+{
+  "pages": [
+    "page/home/home",
+    "page/detail/detail",
+    "page/address/address",
+    "page/list/list",
+    "page/shopIllega/shopIllega",
+    "page/illegaList/illegaList",
+    "page/updateShopData/updateShopData",
+    "page/blendSearch/blendSearch",
+    "page/bindUserInfo/bindUserInfo",
+    "page/illegaSearch/illegaSearch"
+  ],
+  "window": {
+    "navigationBarTitleText": "门责管理小工具"
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}

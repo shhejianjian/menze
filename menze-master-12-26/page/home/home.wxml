@@ -1,0 +1,67 @@
+<view class="container">
+    <view class="profile-bar">
+        <image class="profile" src="../../image/profile.png" bindtap="bindUser"></image>
+    </view>
+    <view class="logo-bar">
+        <image class="logo" src="../../image/logo.png"></image>
+        <text class="app-name">门责管理小工具</text>
+    </view>
+    <view class="search-box">
+        <input class="search-input" bindinput="onInputChange" />
+        <image class="search-img" bindtap="search" src="../../image/search.png"></image>
+    </view>
+    <view class="search-option-bar">
+        <block wx:for="{{searchOptions}}" wx:key="index">
+            <view class="search-option-item" bindtap="searchOptionOnTap" data-index="{{index}}">
+                <image class="search-option-icon" src="{{item.icon}}"></image>
+                <text class="search-option-text">{{item.name}}</text>
+            </view>
+        </block>
+    </view>
+    <block wx:if="{{loading}}">
+        <view class="loading-container">
+            <view class="weui-loading"></view>
+            <text class="loading-text">查询中...</text>
+        </view>
+    </block>
+    <block wx:else>
+        <scroll-view scroll-y="true" class="shop-list" style="height: {{hh}}px">
+            <block wx:for="{{shopList}}" wx:for-item="shop" wx:key="index" >
+                <view class="shop-item" bindtap="navigateToDetail"
+                      data-index = "{{index}}"
+                      data-company-name="{{shop.CompanyName}}"
+                      data-door-offend-count="{{shop.DoorOffendCount}}"
+                      data-leasing-contact-info="{{shop.LeasingContactInfo}}"
+                      data-operat-type="{{shop.OperatType}}"
+                      data-photo-url="{{shop.PhotoUrl}}"
+                      data-road-address="{{shop.RoadAddress}}"
+                >
+                    <image class="shop-image" src="{{shop.PhotoUrl}}" ></image>
+                    <view class="shop-description">
+                        <text class="shop-name">{{shop.CompanyName }}</text>
+                        <view>
+                            <text class="shop-type"> {{shop.OperatType }}</text>
+                        </view>
+                        <view class="shop-address">
+                            <view class="addressView">
+                                <view class="address"> {{shop.RoadAddress }}</view>
+                                
+                                <image class="point-image"  src="{{src[index]}}"></image> 
+                            </view>
+
+                            <view class="distanceView" hidden="{{distanceViewHidden}}">
+                                <image class="location-img" src="../../image/distance.png"></image>
+                                <view class="location-text">距离{{shop.Distance}}米</view>
+                            </view>
+                        </view> 
+                        
+                    </view>
+                     
+                    
+                </view>
+                <view class="line"></view>
+            </block>
+
+        </scroll-view>
+    </block>
+</view>

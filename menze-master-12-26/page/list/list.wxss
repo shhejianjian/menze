@@ -1,0 +1,72 @@
+/* shop list */
+.shop-list {
+    background: red;
+    background: white;
+    display: flex;
+    flex-flow: column;
+}
+
+.shop-item {
+    display: flex;
+    flex-flow: row nowrap;
+    padding: 25rpx;
+    height: auto;
+}
+
+.shop-image {
+    height: 150rpx;
+    width: 200rpx;
+}
+
+.shop-description {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    margin-left: 25rpx;
+    justify-content: space-between;
+}
+
+.shop-name {
+    font-family: "Microsoft YaHei UI";
+    font-size: 36rpx;
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box !important;
+    -webkit-box-orient: vertical;
+    -webkit-line-break: 2;
+    word-break: break-all;
+    width: 500rpx;
+}
+
+.shop-type {
+    font-family: "Microsoft YaHei UI";
+    font-size: 24rpx;
+    color: white;
+    background: coral;
+    border-radius: 5rpx;
+    padding: 10rpx 15rpx 10rpx 15rpx;
+    width: 80rpx;
+    text-align: center;
+}
+
+.shop-address {
+    font-family: "Microsoft YaHei UI";
+    font-size: 28rpx;
+    color: grey;
+}
+
+.line {
+    margin-left: 25rpx;
+    margin-right: 25rpx;
+    background: #eFeFeF;
+    height: 1rpx;
+}
+
+.noDetailView{
+    font-family: "Microsoft YaHei UI";
+    font-size: 36rpx;
+    position: absolute;
+    top: 50%;
+    left: 30%;
+}

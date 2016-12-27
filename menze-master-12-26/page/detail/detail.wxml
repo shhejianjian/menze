@@ -1,0 +1,69 @@
+
+
+<view class="container">
+<view class="shop-image-bg-view">
+    <image class="shop-image" src="../../image/bg_defual.gif" mode="center"></image>
+    <image class="shop-bg" src="{{shop.PhotoUrl}}" mode="aspectFill"></image>
+</view>
+    <view class="shop-name-bar">
+        <text class="shop-name">{{shop.CompanyName}}</text>
+        <view class="shop-status-bar">
+            <text class="shop-evaluate-start">3.9</text>
+            <text class="shop-evaluate-end">/5.0分</text>
+            <text class="shop-type">{{shop.OperatType}}</text>
+        </view>
+    </view>
+
+  
+
+
+    <view class="operation-bar">
+        <view class="operation-item" bindtap="registShopIllega">
+            <image class="operation-item-image" src="../../image/operation.png"></image>
+            <text class="operation-item-text">违规登记</text>
+        </view>
+        <view class="line"></view>
+        <view class="operation-item" bindtap="changePhoto">
+            <image class="operation-item-image" src="../../image/operation.png"></image>
+            <text class="operation-item-text">修改照片</text>
+        </view>
+        <view class="line"></view>
+        <view class="operation-item" bindtap="changeData">
+            <image class="operation-item-image" src="../../image/operation.png"></image>
+            <text class="operation-item-text">修改数据</text>
+        </view>
+    </view>
+    <view class="violation-bar" bindtap="lookShopIllegaList">
+        <text class="violation-evaluate">3.9</text>
+        <text class="violation-text">不错</text>
+        <image class="violation-icon" src="{{iconColor}}"></image>
+        <text class="violation-record">{{shop.DoorOffendCount}} 次违规记录 ></text>
+    </view>
+    <view class="address-bar" bindtap="navigateToAddressMap">
+        <image class="address-image" src="../../image/address.png"></image>
+        <text class="telephone-text" >商户地址：</text>
+        <text class="shop-address-text">{{shop.RoadAddress}}</text>
+    </view>
+    <view class="address-bar" bindtap="callTelephone">
+        <image class="address-image" src="../../image/telephone.png"></image>
+        <text class="telephone-text" >联系电话：</text>
+        <text class="telephone-text" style="color:dodgerblue">{{shop.LeasingContactInfo}}</text>
+    </view>
+    <view class="address-bar">
+        <image class="address-image" src="../../image/person.png"></image>
+        <text class="address-text">联系人：{{shop.LeasingPerson}}</text>
+    </view>
+    <view class="address-bar">
+        <image class="address-image" src="../../image/reviewbin.png"></image>
+        <text class="address-text">生活垃圾上门收集：{{bools}}</text>
+    </view>
+</view>
+
+
+
+<view class="bgView" hidden="{{gifHidden}}">
+
+</view>
+<view class="loadingGIFView" hidden="{{gifHidden}}">
+    <image class="loadingImage" src="../../image/loading.gif"></image>
+</view>

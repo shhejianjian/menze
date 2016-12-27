@@ -1,0 +1,45 @@
+/* page/login/login.wxss */
+page {
+    background: #F8F8F8;
+}
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 150rpx;
+  height: 150rpx;
+  margin-top: 60rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: grey;
+  margin-top: 40rpx;
+  font-family: "Microsoft YaHei UI";
+}
+.title{
+    margin-top: 20rpx;
+    background: white;   
+    align-items: center;
+    flex-direction: row;
+    display: flex;
+    height: 100rpx;
+    border-radius: 10rpx;
+}
+.userText{
+     margin-left: 40rpx;
+     padding: 20rpx;
+}
+.input{
+    margin-top: 100rpx;
+    margin-right: 20rpx;
+     margin-left: 20rpx;
+}
+.binding{
+    margin-top: 50rpx;
+    margin-right: 20rpx;
+    margin-left: 20rpx; 
+}
