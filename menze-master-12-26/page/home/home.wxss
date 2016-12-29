@@ -8,7 +8,7 @@
 .profile-bar {
     display: flex;
     flex-flow: row-reverse nowrap;
-    height: 100rpx;
+    height: 80rpx;
     align-items: center;
 }
 
@@ -34,6 +34,7 @@
     width: 70rpx;
     border-radius: 50%;
 }
+
 
 .app-name {
     font-size: 40rpx;

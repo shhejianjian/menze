@@ -113,6 +113,13 @@ var onInputChange = function (event) {
     });
 };
 
+var onInputConfirmClick = function (event){
+    input = event.detail.value;
+    simpleLib.setData(route, {
+        inputStr:event.detail.value
+    });
+    search();
+};
 // var blurInputChange = function (event) {
 //     input = event.detail.value;
 //     if(input){
@@ -370,6 +377,7 @@ Page({
     onShow: onShow,
     bindUser: bindUser,
     onInputChange: onInputChange,
+    onInputConfirmClick:onInputConfirmClick,
     search: search,
     searchOptionOnTap: searchOptionOnTap,
     navigateToDetail: navigateToDetail

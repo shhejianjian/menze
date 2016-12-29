@@ -5,9 +5,10 @@
     <view class="logo-bar">
         <image class="logo" src="../../image/logo.png"></image>
         <text class="app-name">门责管理小工具</text>
+        
     </view>
     <view class="search-box">
-        <input class="search-input" bindinput="onInputChange" />
+        <input class="search-input" bindinput="onInputChange" bindconfirm="onInputConfirmClick" />
         <image class="search-img" bindtap="search" src="../../image/search.png"></image>
     </view>
     <view class="search-option-bar">
