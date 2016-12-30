@@ -158,7 +158,7 @@ var onLoad = function () {
 Page({
     data: {
         // array: ['1', '2', '3', '4','5', '6', '7', '8','9'],
-         index:0,
+         index:null,
         
         companyName: "",
         select:"",

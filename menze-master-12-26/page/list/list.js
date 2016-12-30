@@ -53,7 +53,7 @@ var fetchIllegaList = function (roadid,CompanyName,offendTimes,roadNum){
             Token: simpleLib.token,
             RoadID: roadid,
             CompanyName:CompanyName,
-            OffendTimes:offendTimes,
+            OffendCountType:offendTimes,
             RoadNum:roadNum,
         };
     console.log(params)
