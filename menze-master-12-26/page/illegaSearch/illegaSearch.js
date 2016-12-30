@@ -92,24 +92,58 @@ var companyNameChange = function (event) {
      });
 };
 
-// 当违规次数改变
-var bindPickerChange = function(e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
-    this.setData({
-      index: e.detail.value
-    })
-};
+// // 当违规次数改变
+// var bindPickerChange = function(e) {
+//     console.log('picker发送选择改变，携带值为', e.detail.value)
+//     this.setData({
+//       index: e.detail.value
+//     })
+// };
 
 
 // 查询
 var search = function () {
 
-    console.log(this.data.select,this.data.companyName,Number(this.data.index)+1)
-    var offendTime = Number(this.data.index)+1;
+    console.log(this.data.select,this.data.companyName,this.data.index)
+    var offendTime = this.data.index;
 
     var url = '../list/list?RoadID=' + this.data.select + '&OffendTimes=' + offendTime + '&CompanyName=' + this.data.companyName;
     simpleLib.navigateTo(url);
     
+};
+
+var greenLightClick = function (){
+    simpleLib.setData(route,{
+        greenImageUrl:'../../image/greenLight.png',
+        yellowImageUrl:"../../image/greyLight.png",
+        redImageUrl:"../../image/greyLight.png",
+        greenTextColor:'green',
+        yellowTextColor:'grey',
+        redTextColor:'grey',
+        index:1
+    })
+};
+var yellowLightClick = function (){
+    simpleLib.setData(route,{
+        greenImageUrl:'../../image/greyLight.png',
+        yellowImageUrl:"../../image/yellowLight.png",
+        redImageUrl:"../../image/greyLight.png",
+        greenTextColor:'grey',
+        yellowTextColor:'#ed8713',
+        redTextColor:'grey',
+        index:2
+    })
+};
+var redLightClick = function (){
+    simpleLib.setData(route,{
+        greenImageUrl:'../../image/greyLight.png',
+        yellowImageUrl:"../../image/greyLight.png",
+        redImageUrl:"../../image/redLight.png",
+        greenTextColor:'grey',
+        yellowTextColor:'grey',
+        redTextColor:'red',
+        index:3
+    })
 };
 
 //
@@ -123,17 +157,27 @@ var onLoad = function () {
 };
 Page({
     data: {
-        array: ['1', '2', '3', '4','5', '6', '7', '8','9'],
-        index:0,
+        // array: ['1', '2', '3', '4','5', '6', '7', '8','9'],
+         index:0,
+        
         companyName: "",
         select:"",
         doorNum: "",
+        greenImageUrl:"../../image/greyLight.png",
+        yellowImageUrl:"../../image/greyLight.png",
+        redImageUrl:"../../image/greyLight.png",
+        greenTextColor:"grey",
+        yellowTextColor:"grey",
+        redTextColor:"grey",
     },
     onLoad: onLoad,
     onAreaChange: onAreaChange,
     onRoadChange: onRoadChange,
     onDoorNumChange:onDoorNumChange,
     companyNameChange: companyNameChange,
-    bindPickerChange:bindPickerChange,
-    search: search
+    // bindPickerChange:bindPickerChange,
+    search: search,
+    greenLightClick:greenLightClick,
+    yellowLightClick:yellowLightClick,
+    redLightClick:redLightClick
 });

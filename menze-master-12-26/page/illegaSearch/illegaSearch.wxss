@@ -3,6 +3,27 @@ page {
   background-color: #F8F8F8;
 }
 
+.lightView{
+  padding: 0 30rpx 0 30rpx;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.lightImage{
+  height: 70rpx;
+  width: 70rpx;
+}
+.imageTextView{
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+.illegaCountText{
+  color: gray;
+  font-size: 28rpx;
+}
+
 .picker{
   padding: 26rpx;
   background-color: white;

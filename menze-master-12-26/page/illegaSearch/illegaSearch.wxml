@@ -4,11 +4,30 @@
             <input bindchange="companyNameChange" placeholder="请输入商户名称"/>
         </view>
         <view class="section__title">请选择违规次数</view>
-        <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+
+        <view class="lightView">
+        <view class="imageTextView" bindtap="greenLightClick">
+            <image class="lightImage" src="{{greenImageUrl}}"></image>
+            <text class="illegaCountText" style="color:{{greenTextColor}}">1-3次</text>
+        </view>
+        <view class="imageTextView" bindtap="yellowLightClick">
+            <image class="lightImage" src="{{yellowImageUrl}}"></image>
+            <text class="illegaCountText" style="color:{{yellowTextColor}}">4-6次</text>
+        </view>
+        
+
+        <view class="imageTextView" bindtap="redLightClick">
+            <image class="lightImage" src="{{redImageUrl}}"></image>
+            <text class="illegaCountText" style="color:{{redTextColor}}">7-9次</text>
+        </view>
+        
+        </view>
+
+        <!--<picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
             <view class="pickerForIllega">
             当前选择：{{array[index]}}次违规记录
             </view>
-        </picker>
+        </picker>-->
 
         
         <view class="section__title">请选择街道{{testText}}</view>
