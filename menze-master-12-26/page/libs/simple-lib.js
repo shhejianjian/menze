@@ -19,7 +19,8 @@ var setData = function (route, data) {
 
 var toast = function (msg) {
     wx.showToast({
-        title: msg
+        title: msg,
+        mask:true
     });
 };
 var getArr = function (data) {

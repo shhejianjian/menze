@@ -156,6 +156,7 @@ var onLoad = function () {
     initNaviItems();
     wx.showToast({
         title: '加载中',
+        mask:true,
         icon: 'loading',
         duration: 1000
     })
