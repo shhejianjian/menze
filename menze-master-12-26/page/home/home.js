@@ -161,6 +161,7 @@ var search = function () {
         });
     var that = this
     showLoading();
+    wx.showNavigationBarLoading();
     wx.request({
         url: simpleLib.baseUrl + '/DoorQueryByString',
         data: {
@@ -174,6 +175,7 @@ var search = function () {
         },
         method: "POST",
         success: function (res) {
+            wx.hideNavigationBarLoading();
             var data=res.data
                  simpleLib.setData(route,{
                     src:simpleLib.getArr(data)
@@ -260,6 +262,7 @@ var getSystemInfo = function () {
 
 //智能搜索，定位
 var getUserLocation = function () {
+
     wx.getLocation({
         type: 'wgs84',
         success: function(res) {
@@ -271,7 +274,7 @@ var getUserLocation = function () {
                     Lng:res.longitude,
                     Lat:res.latitude,                    
                 };
-        
+             wx.showNavigationBarLoading();
              wx.request({
                 url: simpleLib.baseUrl + '/DoorQueryByPos',
                 data: params,
@@ -280,6 +283,7 @@ var getUserLocation = function () {
                 },
                 method: "POST",
                 success: function (res) {
+                    wx.hideNavigationBarLoading();
                     console.log(res.data)
                     var data=res.data
                     simpleLib.setData(route,{

@@ -17,7 +17,7 @@
   
 
 
-    <view class="operation-bar">
+    <view class="operation-bar" wx:if="{{isGuest}}">
         <view class="operation-item" bindtap="registShopIllega">
             <image class="operation-item-image" src="../../image/operation.png"></image>
             <text class="operation-item-text">违规登记</text>
@@ -47,11 +47,12 @@
     <view class="address-bar" bindtap="callTelephone">
         <image class="address-image" src="../../image/telephone.png"></image>
         <text class="telephone-text" >联系电话：</text>
-        <text class="telephone-text" style="color:dodgerblue">{{shop.LeasingContactInfo}}</text>
+        <text class="telephone-text" style="color:dodgerblue" wx:if="{{isGuest}}">{{shop.LeasingContactInfo}}</text>
     </view>
     <view class="address-bar">
         <image class="address-image" src="../../image/person.png"></image>
-        <text class="address-text">联系人：{{shop.LeasingPerson}}</text>
+        <text class="telephone-text" >联系人：</text>
+        <text class="address-text" wx:if="{{isGuest}}">{{shop.LeasingPerson}}</text>
     </view>
     <view class="address-bar">
         <image class="address-image" src="../../image/reviewbin.png"></image>

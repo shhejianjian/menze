@@ -35,7 +35,8 @@ var getOpenId = function (code) {
         success: function (res) {
             console.log(res.data.openid)
             simpleLib.getGlobalData().openId = res.data.openid;
-            fetchAreaList();
+            // fetchAreaList();
+            checkGuestOrOther();
         },
         fail: function (res) {
             simpleLib.toast("获取 OPEN ID 失败")
@@ -43,38 +44,58 @@ var getOpenId = function (code) {
     });
 };
 
-//第一次进入时判断用户是否绑定
-var fetchAreaList = function () {
+
+// var fetchAreaList = function () {
+//     wx.request({
+//         url: simpleLib.baseUrl + '/AreaRoadList',
+//         method: 'POST',
+//         data: {
+//             OpenID: simpleLib.getGlobalData().openId,
+//             Token: simpleLib.token
+//         },
+//         header: {
+//             'content-type': 'application/json'
+//         },
+//         success: function (res) {
+//             // 保存街道列表
+//             console.log(res.data)
+//             if(!res.data){
+//                 simpleLib.getGlobalData().isLogin = false;
+//             } else {
+//                 simpleLib.getGlobalData().isLogin = true;
+//             }
+//         },
+//         fail: function (res) {
+//             simpleLib.toast("获取信息失败");
+//         }
+//     })
+// };
+ //第一次进入时判断用户是否绑定
+var checkGuestOrOther = function () {
     wx.request({
-        url: simpleLib.baseUrl + '/AreaRoadList',
-        method: 'POST',
+        url: simpleLib.baseUrl + '/CurrentUserID',
         data: {
+            Token: simpleLib.token,
             OpenID: simpleLib.getGlobalData().openId,
-            Token: simpleLib.token
         },
         header: {
-            'content-type': 'application/json'
+            'content-type': 'application/json;charset=UTF-8'
         },
+        method: "POST",
         success: function (res) {
-            // 保存街道列表
-            console.log(res.data)
-            if(!res.data){
-                wx.removeStorage({
-                    key: 'iconUrl',
-                    success: function(res) {
-                        simpleLib.getGlobalData().isLogin = false;
-                    } 
-                });
+            console.log(res)
+            if(res.data == "guest"){
+                simpleLib.getGlobalData().isLogin = true;
+                simpleLib.getGlobalData().showGuestData = false;
+            } else if(res.data == "用户未绑定"){
+                simpleLib.getGlobalData().isLogin = false;
             } else {
                 simpleLib.getGlobalData().isLogin = true;
-            }
+                simpleLib.getGlobalData().showGuestData = true;
+            }       
         },
-        fail: function (res) {
-            simpleLib.toast("获取信息失败");
-        }
-    })
+    });
 };
-
 
 var onShow = function () {
     login();

@@ -129,7 +129,6 @@
 }
 
 .violation-text {
-    
     font-family: "Microsoft YaHei UI";
     font-size: 32rpx;
     margin-left: 16rpx;

@@ -3,12 +3,14 @@ var route = "page/detail/detail";
 
 
 var shop;
+var isGuest;
 var initShop = function () {
     var app = getApp();
     simpleLib.getGlobalData().shop.PhotoUrl = changePhotoPX(simpleLib.getGlobalData().shop.PhotoUrl);
     shop = simpleLib.getGlobalData().shop;
     simpleLib.setData(route, {
-        shop: shop
+        shop: shop,
+        isGuest:simpleLib.getGlobalData().showGuestData
     });
     showIllegaLightColor(shop.DoorOffendCount);
 };
@@ -147,6 +149,7 @@ var navigateToAddressMap = function () {
 
 //1.刷新用，从智能搜索跳转过来
 var getUserLocation = function () {
+    wx.showNavigationBarLoading();
     wx.getLocation({
         type: 'wgs84',
         success: function(res) {
@@ -163,6 +166,7 @@ var getUserLocation = function () {
                 },
                 method: "POST",
                 success: function (res) {
+                    wx.hideNavigationBarLoading();
                     for(var i = 0;i < res.data.length;i++){
                         if(res.data[i].ID == shop.ID){
                             shop.WasteCollection = res.data[i].WasteCollection;
@@ -184,6 +188,7 @@ var getUserLocation = function () {
 };
 //2.刷新用，输入框搜索或一键搜索跳转过来
 var search = function () {
+    wx.showNavigationBarLoading();
     var inputStr = simpleLib.getGlobalData().inputString
     wx.request({
         url: simpleLib.baseUrl + '/DoorQueryByString',
@@ -197,6 +202,7 @@ var search = function () {
         },
         method: "POST",
         success: function (res) {
+            wx.hideNavigationBarLoading();
             for(var i = 0;i < res.data.length;i++){
                 if(res.data[i].ID == shop.ID){
                     shop.WasteCollection = res.data[i].WasteCollection;
@@ -214,6 +220,7 @@ var search = function () {
 };
 //3.刷新用，从地址搜索跳转过来
 var fetchList = function (roadId, doorNum) {
+    wx.showNavigationBarLoading();
     wx.request({
         url: simpleLib.baseUrl + '/DoorQuery',
         method: 'POST',
@@ -227,6 +234,7 @@ var fetchList = function (roadId, doorNum) {
             'content-type': 'application/json'
         },
         success: function (res) {
+            wx.hideNavigationBarLoading();
             for(var i = 0;i < res.data.length;i++){
                 if(res.data[i].ID == shop.ID){
                     shop.WasteCollection = res.data[i].WasteCollection;
@@ -244,7 +252,7 @@ var fetchList = function (roadId, doorNum) {
 };
 //4.刷新用，从违规搜索跳转过来
 var fetchIllegaList = function (roadid,CompanyName,offendTimes,roadNum){
-
+    wx.showNavigationBarLoading();
     var params = {
             OpenID: simpleLib.getGlobalData().openId,
             Token: simpleLib.token,
@@ -263,6 +271,7 @@ var fetchIllegaList = function (roadid,CompanyName,offendTimes,roadNum){
             'content-type': 'application/json'
         },
         success: function (res) {
+            wx.hideNavigationBarLoading();
             simpleLib.setData(route, {
                 shopList: res.data
             });
@@ -287,7 +296,7 @@ var fetchIllegaList = function (roadid,CompanyName,offendTimes,roadNum){
 };
 //5.刷新用，从组合搜索跳转过来
 var fetchBlendList = function (roadid,CompanyName,OperatType,WasteCollection,roadNum){
-
+    wx.showNavigationBarLoading();
     var params = {
             OpenID: simpleLib.getGlobalData().openId,
             Token: simpleLib.token,
@@ -307,6 +316,7 @@ var fetchBlendList = function (roadid,CompanyName,OperatType,WasteCollection,roa
             'content-type': 'application/json'
         },
         success: function (res) {
+            wx.hideNavigationBarLoading();
             for(var i = 0;i < res.data.length;i++){
                 if(res.data[i].ID == shop.ID){
                     shop.WasteCollection = res.data[i].WasteCollection;

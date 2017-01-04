@@ -5,7 +5,7 @@ var onLoad=function(options){
     simpleLib.setData(route,{
        userInfo: simpleLib.getGlobalData().userInfo
     })
-}
+};
 
 var inputUserName=function(e){
     simpleLib.setData(route,{
@@ -51,22 +51,44 @@ var binding=function(){
                 }
             } else {
                 simpleLib.toast("绑定用户成功");
-                simpleLib.getGlobalData().isLogin = true;
+                checkGuestOrOther();
                 back();
-                wx.setStorage({
-                    key:"iconUrl",
-                    data:that.data.userInfo.avatarUrl
-                });
             }    
         },
         fail: function (res) {
-            simpleLib.toast("绑定用户失败")
+            simpleLib.toast("绑定用户失败");
         },
         complete: function () {
             // hideLoading();
         }
     });
-}
+};
+
+var checkGuestOrOther = function () {
+    wx.request({
+        url: simpleLib.baseUrl + '/CurrentUserID',
+        data: {
+            Token: simpleLib.token,
+            OpenID: simpleLib.getGlobalData().openId,
+        },
+        header: {
+            'content-type': 'application/json;charset=UTF-8'
+        },
+        method: "POST",
+        success: function (res) {
+            
+            if(res.data == "guest"){
+                simpleLib.getGlobalData().isLogin = true;
+                simpleLib.getGlobalData().showGuestData = false;
+            } else if(res.data == "用户未绑定"){
+                simpleLib.getGlobalData().isLogin = false;
+            } else {
+                simpleLib.getGlobalData().isLogin = true;
+                simpleLib.getGlobalData().showGuestData = true;
+            }     
+        },
+    });
+};
 
 var back = function () {
     setTimeout(function(){
@@ -77,13 +99,13 @@ var back = function () {
             },
         })
     },2000)
-}
+};
 
 Page({
     data:{
       userInfo: {},
-      userName:'',
-      passward:'',
+      userName:'guest',
+      passward:'guest',
     },
     onLoad:onLoad,
     binding:binding,

@@ -4,21 +4,25 @@ var route = "page/illegaList/illegaList";
 var shop;
 var initShop = function () {
     var app = getApp();
-    shop = app.globalData.shop;
+    shop = simpleLib.getGlobalData().shop;
     simpleLib.setData(route, {
         shop: shop
     });
 };
 //获取违规列表数据
 var fetchList = function () {
-    wx.request({
-        url: simpleLib.baseUrl + '/DoorOffendInfoQuery',
-        method: 'POST',
-        data: {
+
+    var params = {
             OpenID: simpleLib.getGlobalData().openId,
             Token: simpleLib.token,
             DoorID:shop.ID,
-        },
+        };
+
+        console.log(params)
+    wx.request({
+        url: simpleLib.baseUrl + '/DoorOffendInfoQuery',
+        method: 'POST',
+        data: params,
         header: {
             'content-type': 'application/json'
         },

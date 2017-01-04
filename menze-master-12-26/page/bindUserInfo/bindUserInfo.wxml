@@ -7,12 +7,12 @@
 </view>
 <view class="input">
   <view class="title">
-    <text class="userText">用户名:</text>
-    <input  placeholder="请输用户名" bindinput="inputUserName"/>
+    <text class="userText" >用户名:</text>
+    <input value="guest" placeholder="请输用户名" bindinput="inputUserName"/>
   </view>
   <view class="title" >
     <text class="userText" > 密　码:</text>
-    <input password="true" placeholder="请输密码" bindinput="inputPassward"/>
+    <input value="guest" password="true" placeholder="请输密码" bindinput="inputPassward"/>
   </view>
 </view>
 <view class="binding">
