@@ -55,6 +55,6 @@
 
 
 <view class="button-wrapper">
-    <button type="primary" plain="true " bindtap="search"> 查询
+    <button class="commitBtn" type="default" bindtap="search"> 查询
     </button>
 </view>

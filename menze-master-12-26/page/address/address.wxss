@@ -59,3 +59,8 @@ page {
   color: #4D4D4D;
   font-weight: bold;
 }
+
+.commitBtn{
+    background-color: #27a59c;
+    color: white;
+}

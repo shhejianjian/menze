@@ -20,6 +20,7 @@ var getUserInfo = function () {
         },
         fail: function () {
             simpleLib.toast('获取用户信息失败');
+            simpleLib.getGlobalData().isLogin = false;
         }
     })
 };
@@ -84,6 +85,7 @@ var checkGuestOrOther = function () {
         method: "POST",
         success: function (res) {
             console.log(res)
+            simpleLib.getGlobalData().userType = res.data;
             if(res.data == "guest"){
                 simpleLib.getGlobalData().isLogin = true;
                 simpleLib.getGlobalData().showGuestData = false;
@@ -93,6 +95,9 @@ var checkGuestOrOther = function () {
                 simpleLib.getGlobalData().isLogin = true;
                 simpleLib.getGlobalData().showGuestData = true;
             }       
+        },
+        fail:function (res){
+            simpleLib.getGlobalData().isLogin = false;
         },
     });
 };

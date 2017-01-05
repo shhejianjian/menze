@@ -5,16 +5,28 @@
     <text class="userinfo-nickname">{{userInfo.nickName}}</text>
   </view>
 </view>
-<view class="input">
+
+
+<view class="input" wx:if="{{!isLogin}}">
   <view class="title">
     <text class="userText" >用户名:</text>
-    <input value="guest" placeholder="请输用户名" bindinput="inputUserName"/>
+    <input  placeholder="请输用户名" bindinput="inputUserName"/>
   </view>
   <view class="title" >
     <text class="userText" > 密　码:</text>
-    <input value="guest" password="true" placeholder="请输密码" bindinput="inputPassward"/>
+    <input  password="true" placeholder="请输密码" bindinput="inputPassward"/>
   </view>
+          
 </view>
-<view class="binding">
-  <button type="primary" plain="true" bindtap="binding">绑定</button>
+<view class="binding" wx:if="{{!isLogin}}">
+  <button class="commitBtn" type="default" bindtap="binding">绑定</button>
 </view>
+
+<view class="loginView" wx:if="{{isLogin}}">
+    <view class="userinfo-nickname">绑定账号：{{userType}}</view>
+</view>
+
+<view class="binding" wx:if="{{isLogin}}">
+  <button class="commitBtn" type="default" bindtap="logOut">退出</button>
+</view>
+

@@ -3,7 +3,9 @@ var route = "page/bindUserInfo/bindUserInfo";
 
 var onLoad=function(options){
     simpleLib.setData(route,{
-       userInfo: simpleLib.getGlobalData().userInfo
+       userInfo: simpleLib.getGlobalData().userInfo,
+       isLogin: simpleLib.getGlobalData().isLogin,
+       userType:simpleLib.getGlobalData().userType
     })
 };
 
@@ -64,6 +66,43 @@ var binding=function(){
     });
 };
 
+
+var logOut = function (){
+
+    wx.showModal({
+        title: '温馨提示',
+        content: '退出将解除与该账号的绑定，确认退出？',
+        success: function(res) {
+            if (res.confirm) {
+                logOutRequest();
+                simpleLib.getGlobalData().isLogin = false;
+                simpleLib.setData(route,{
+                    isLogin: simpleLib.getGlobalData().isLogin,
+                    
+                })
+            }
+        }
+    });
+};
+
+var logOutRequest = function (){
+    wx.request({
+        url: simpleLib.baseUrl + '/UnbindUser',
+        data: {
+            Token: simpleLib.token,
+            OpenID: simpleLib.getGlobalData().openId,
+        },
+        header: {
+            'content-type': 'application/json;charset=UTF-8'
+        },
+        method: "POST",
+        success: function (res) {
+            console.log(res)    
+        },
+    });
+};
+
+
 var checkGuestOrOther = function () {
     wx.request({
         url: simpleLib.baseUrl + '/CurrentUserID',
@@ -104,12 +143,16 @@ var back = function () {
 Page({
     data:{
       userInfo: {},
-      userName:'guest',
-      passward:'guest',
+      userName:'',
+      passward:'',
+      isLogin:false,
+      userType:'',
+      
     },
     onLoad:onLoad,
     binding:binding,
     inputUserName:inputUserName,
     inputPassward:inputPassward,
+    logOut:logOut,
 
 });

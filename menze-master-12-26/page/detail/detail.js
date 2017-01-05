@@ -450,13 +450,13 @@ var onShow = function () {
 };
 
 //分享
-var onShareAppMessage = function (){
-    return {
-      title: '安利给你一个好东西！',
-      desc: '分享内容',
-      path: '../detail/detail'
-    }
-};
+// var onShareAppMessage = function (){
+//     return {
+//       title: '安利给你一个好东西！',
+//       desc: '分享内容',
+//       path: '../detail/detail'
+//     }
+// };
 
 Page({
     data:{
@@ -471,7 +471,6 @@ Page({
     onReady: onReady,
     changeData:changeData,
     changePhoto:changePhoto,
-    onShareAppMessage:onShareAppMessage,
     lookShopIllegaList:lookShopIllegaList,
     navigateToAddressMap:navigateToAddressMap,
     registShopIllega:registShopIllega

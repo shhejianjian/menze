@@ -228,11 +228,11 @@ var navigateToDetail = function (event) {
 //绑定用户按钮，未绑定，跳转至绑定页面，若已绑定，提示已绑定
 var bindUser = function () {
 
-    if(simpleLib.getGlobalData().isLogin){
-        simpleLib.toast("该微信号已绑定")
-    } else {
+    // if(simpleLib.getGlobalData().isLogin){
+    //     simpleLib.toast("该微信号已绑定")
+    // } else {
         simpleLib.navigateTo("../bindUserInfo/bindUserInfo");
-    }
+    //}
 };
 
 

@@ -7,7 +7,11 @@ page {
   flex-direction: column;
   align-items: center;
 }
-
+.loginView {
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .userinfo-avatar {
   width: 150rpx;
   height: 150rpx;
@@ -42,4 +46,86 @@ page {
     margin-top: 50rpx;
     margin-right: 20rpx;
     margin-left: 20rpx; 
+}
+.commitBtn{
+    background-color: #27a59c;
+    color: white;
+}
+
+.login-help {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 30rpx;
+  font-size: 10pt;
+  color: #bbb;
+}
+.login-help-img {
+  width: 11pt;
+  height: 11pt;
+  margin: 10rpx 5rpx;
+}
+
+.help {
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 80%;
+  top: 30%;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 50px rgba(22,22,22,.35);
+  transform: translate3d(0,-400rpx,0);
+}
+.box-hd {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100rpx;
+  border-bottom: 1px solid #eee;
+}
+.box-title {
+  font-size: 28rpx;
+}
+.box-close {
+  position: absolute;
+  right: 20rpx;
+  width: 35rpx;
+  height: 35rpx;
+  padding: 15rpx;
+}
+.box-bd {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 15rpx 40rpx 30rpx;
+}
+.help-q {
+  color: #999;
+  font-size: 28rpx;
+  line-height: 200%;
+  margin-top: 5rpx;
+}
+.help-a {
+  text-indent: 1em;
+  line-height: 160%;
+  display: flex;
+  
+  flex-direction: column;
+}
+.help-a text{
+    font-size: 28rpx;
+  word-break: break-all;
 }

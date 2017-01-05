@@ -16,7 +16,7 @@
     <text >承租方联系电话：</text>
 </view>
 <view class="input">
-    <input bindchange="bindInputNumber" value="{{telephoneNum}}" placeholder="请填写承租方联系电话"/>
+    <input maxlength="11" bindchange="bindInputNumber" value="{{telephoneNum}}" placeholder="请填写承租方联系电话"/>
 </view>
 <view class="switch">
     <text class="switchText">生活垃圾上门收集</text>
