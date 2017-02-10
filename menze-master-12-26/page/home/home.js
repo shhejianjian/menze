@@ -48,6 +48,7 @@ var searchOptionOnTap = function (event) {
         if(input){
             search();
         } else {
+            simpleLib.toast("请输入商户名称或地址进行搜索");
             simpleLib.setData(route, {
                 shopList:'',
             });
@@ -150,6 +151,7 @@ var onInputConfirmClick = function (event){
 var search = function () {
 
     if(!input){
+        simpleLib.toast("请输入商户名称或地址进行搜索");
         simpleLib.setData(route, {
             shopList: '',
         });

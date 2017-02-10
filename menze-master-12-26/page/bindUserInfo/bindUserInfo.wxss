@@ -25,7 +25,8 @@ page {
   font-family: "Microsoft YaHei UI";
 }
 .title{
-    margin-top: 20rpx;
+  
+    margin: 20rpx;
     background: white;   
     align-items: center;
     flex-direction: row;
@@ -34,14 +35,18 @@ page {
     border-radius: 10rpx;
 }
 .userText{
-     margin-left: 40rpx;
-     padding: 20rpx;
+     
+     margin: 20rpx;
+     text-align: center;
+     
+     width: 160rpx;
 }
-.input{
+.inputView{
     margin-top: 100rpx;
     margin-right: 20rpx;
-     margin-left: 20rpx;
+    margin-left: 20rpx;
 }
+
 .binding{
     margin-top: 50rpx;
     margin-right: 20rpx;

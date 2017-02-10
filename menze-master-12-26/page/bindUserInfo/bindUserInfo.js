@@ -75,11 +75,7 @@ var logOut = function (){
         success: function(res) {
             if (res.confirm) {
                 logOutRequest();
-                simpleLib.getGlobalData().isLogin = false;
-                simpleLib.setData(route,{
-                    isLogin: simpleLib.getGlobalData().isLogin,
-                    
-                })
+                
             }
         }
     });
@@ -97,7 +93,13 @@ var logOutRequest = function (){
         },
         method: "POST",
         success: function (res) {
-            console.log(res)    
+            console.log(res)
+            if(res.data="OK"){
+                simpleLib.getGlobalData().isLogin = false;
+                simpleLib.setData(route,{
+                    isLogin: simpleLib.getGlobalData().isLogin,  
+                }) 
+            }
         },
     });
 };
@@ -115,7 +117,10 @@ var checkGuestOrOther = function () {
         },
         method: "POST",
         success: function (res) {
-            
+            simpleLib.getGlobalData().userType = res.data;
+            simpleLib.setData(route,{
+                userType:simpleLib.getGlobalData().userType
+            })
             if(res.data == "guest"){
                 simpleLib.getGlobalData().isLogin = true;
                 simpleLib.getGlobalData().showGuestData = false;

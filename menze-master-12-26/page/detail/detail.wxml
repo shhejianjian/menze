@@ -8,7 +8,7 @@
     <view class="shop-name-bar">
         <text class="shop-name">{{shop.CompanyName}}</text>
         <view class="shop-status-bar">
-            <text class="shop-evaluate-start">3.9</text>
+            <text class="shop-evaluate-start">5.0</text>
             <text class="shop-evaluate-end">/5.0分</text>
             <text class="shop-type">{{shop.OperatType}}</text>
         </view>
@@ -34,8 +34,8 @@
         </view>
     </view>
     <view class="violation-bar" bindtap="lookShopIllegaList">
-        <text class="violation-evaluate">3.9</text>
-        <text class="violation-text">不错</text>
+        <text class="violation-evaluate">5.0</text>
+        <text class="violation-text">良好</text>
         <image class="violation-icon" src="{{iconColor}}"></image>
         <text class="violation-record">{{shop.DoorOffendCount}} 次违规记录 ></text>
     </view>
@@ -44,12 +44,12 @@
         <text class="telephone-text" >商户地址：</text>
         <text class="shop-address-text">{{shop.RoadAddress}}</text>
     </view>
-    <view class="address-bar" bindtap="callTelephone">
+    <view class="address-bar" wx:if="{{isGuest}}" bindtap="callTelephone">
         <image class="address-image" src="../../image/telephone.png"></image>
         <text class="telephone-text" >联系电话：</text>
-        <text class="telephone-text" style="color:dodgerblue" wx:if="{{isGuest}}">{{shop.LeasingContactInfo}}</text>
+        <text class="telephone-text" style="color:dodgerblue" >{{shop.LeasingContactInfo}}</text>
     </view>
-    <view class="address-bar">
+    <view class="address-bar" wx:if="{{isGuest}}">
         <image class="address-image" src="../../image/person.png"></image>
         <text class="telephone-text" >联系人：</text>
         <text class="address-text" wx:if="{{isGuest}}">{{shop.LeasingPerson}}</text>

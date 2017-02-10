@@ -86,3 +86,7 @@ page {
  margin-top:10px; 
  padding: 10px;
 }
+.commitBtn{
+    background-color: #27a59c;
+    color: white;
+}

@@ -44,5 +44,5 @@
 </view>
 
   <view class="ok">
-    <button type="primary" plain="true" bindtap="commit">提交</button>
+    <button class="commitBtn" type="default" bindtap="commit">提交</button>
   </view>

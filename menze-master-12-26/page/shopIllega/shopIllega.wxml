@@ -40,7 +40,7 @@
 </view>
 
 <view class="button-wrapper">
-    <button type="primary" plain="unplain"
+    <button class="commitBtn" type="default"
             bindtap="commit"> 提交
     </button>
 </view>

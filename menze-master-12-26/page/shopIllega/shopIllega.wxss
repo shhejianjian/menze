@@ -109,3 +109,7 @@ page {
     background-color: lightgrey;
     opacity: 0.5;
 }
+.commitBtn{
+    background-color: #27a59c;
+    color: white;
+}

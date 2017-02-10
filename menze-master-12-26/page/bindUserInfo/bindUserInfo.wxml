@@ -7,7 +7,7 @@
 </view>
 
 
-<view class="input" wx:if="{{!isLogin}}">
+<view class="inputView" wx:if="{{!isLogin}}">
   <view class="title">
     <text class="userText" >用户名:</text>
     <input  placeholder="请输用户名" bindinput="inputUserName"/>
